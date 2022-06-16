@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+<record id='book_review_wizard_form' model='ir.ui.view'>
+    <field name='name'>book review wizard form view</field>
+    <field name='model'>book.review.wizard</field>
+    <field name='arch' type='xml'>
+        <form string="Review Book">
+            <sheet>
+                <group>
+                    <field name='borrower_id'/>
+                </group>
+                <group>
+                    <field name='book_id'/>
+                </group>
+                <group>
+                    <field name='rating'/>
+                </group>
+            </sheet>
+            <footer>
+                <button string='Submit Review' name='add_book_reviews' class='btn-primary' type='object'/>
+                <button string='Cancel' class='btn-default' special='cancel'/>
+            </footer>
+        </form>
+    </field>
+</record>
+
+<act_window id="action_wizard_review_books" name="Review Books" res_model="book.review.wizard" view_mode="form" target="new" />
+<menuitem id="menu_wizard_review_books" parent="library_base_menu" action="action_wizard_review_books" sequence="20" />
+
+</odoo>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id='library_res_partner' model='ir.ui.view'>
+
+        <field name='name'>library.res.partner</field>
+        <field name='model'>res.partner</field>
+        <field name='inherit_id' ref='base.view_partner_form' />
+        <field name='arch' type='xml'>
+
+            <xpath expr="//form//sheet//div[@name='button_box']" position="inside">
+                <button id='partner_books_history' string='Borrow History' name='books_history' class='oe_stat_button' type='object' icon='fa-book' attrs="{'invisible':[('book_history_count','=',0)]}"></button>
+                <field name="book_history_count" invisible="1" />
+
+                <button id='partner_books_checked_out' string='Books Borrowed' name='books_checked_out' class='oe_stat_button' type='object' icon='fa-book' attrs="{'invisible':[('book_borrowed_count','=',0)]}"></button>
+                <field name="book_borrowed_count" invisible="1" />
+
+                <button id='partner_books_reviewed' string='Books Reviewed' name='books_reviewed' class='oe_stat_button' type='object' icon='fa-star' attrs="{'invisible':[('book_reviewed_count','=',0)]}"></button>
+                <field name="book_reviewed_count" invisible="1" />
+            </xpath>
+
+        </field>
+
+    </record>
+
+</odoo>

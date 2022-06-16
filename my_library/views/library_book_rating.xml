@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id='library_book_rating_action' model='ir.actions.act_window'>
+        <field name="name">Book Rating</field>
+        <field name="res_model">library.book.rating</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Book Rating" id="library_book_rating_menu" parent="library_base_menu" action="library_book_rating_action"/> 
+
+    <!-- Form View -->
+    <record id="library_book_rating_view_form" model="ir.ui.view">
+        <field name="name">Library Rating Form</field>
+        <field name="model">library.book.rating</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <group>
+                        <field name="book_id"/>
+                    </group>
+                    <group>
+                        <field name="borrower_id"/>
+                    </group>
+                </group>
+                <group>
+                    <field name="rating"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+     <!-- Tree(list) View -->
+    <record id="library_book_rating_view_tree" model="ir.ui.view">
+        <field name="name">Library Book List</field>
+        <field name="model">library.book.rating</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="book_id"/>
+                <field name="borrower_id"/>
+                <field name="rating"/>
+            </tree>
+        </field>
+    </record> 
+
+</odoo>
